@@ -1,0 +1,164 @@
+@import 'bourbon/bourbon';
+@import 'config';
+@import 'transient/sprites'; //compiled by gulp
+@import 'setup/mixins';
+@import 'setup/functions';
+@import 'setup/normalize';
+@import 'setup/reset';
+@import 'global/typography';
+@import 'global/layout';
+
+//-----
+
+body {
+	 background-color: #fafafa;
+	 font-family: 'Open Sans', sans-serif;
+}
+
+
+//Nav
+
+.nav {
+	  width: 100%;
+    height: 75px;
+    background: #4fc3f7;
+}
+
+.nav-wrapper {
+	width: 40%;
+  margin: auto;
+}
+
+%nav-links {
+  display: block;
+  float: left;
+  line-height: 75px;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #212121;
+  font-family: 'Lato', sans-serif;
+  width: 33%;
+  text-align: center;
+}
+
+.nav-link-states {
+	@extend %nav-links;
+}
+.nav-link-guestbook {
+	@extend %nav-links;
+}
+.nav-link-login {
+	@extend %nav-links;
+}
+
+
+//Forms
+
+.label {
+	display: block;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.btn {
+	   margin-top: 40px;
+    width: 30%;
+    height: 40px;
+    border-radius: 3px;
+    -webkit-appearance: none;
+    background: #64ffda;
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.form-control {
+	  width: 30%;
+    border-radius: 3px;
+    box-shadow: none;
+    border: 1px solid #b2ebf2;
+}
+
+.help-block {
+    color: #ef5350;
+    display: block;
+    font-weight: 900;
+}
+
+.alert-danger {
+	  text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #ef5350;
+}
+
+//Guestbook
+
+.guestbook-container {
+  text-align: center;
+  max-width: 1000px;
+  width: 90%;
+  margin-top: 50px;
+  margin: auto;
+}
+
+.guestbook-entries {
+	  border: 1px solid #b2ebf2;
+    width: 400px;
+    margin: auto;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+.guestbook-auth  {
+	    padding: 40px;
+    padding-bottom: 80px;
+}
+
+//Login
+
+#loginForm {
+	  max-width: 700px;
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+}
+
+
+
+//states
+
+.state-hidden {
+	    padding-left: 20px;
+	        padding-top: 20px;
+}
+
+.state-box {
+    border: 1px solid #b2ebf2;
+    width: 400px;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.state-item {
+	    display: block;
+    padding-bottom: 5px;
+    font-size: 16px;
+}
+
+.state-label {
+	    display: inline-block;
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 148px;
+}

@@ -1,0 +1,13 @@
+<div ng-controller="StatesCtrl">
+	  <div ng-repeat="state in states" class="state-box" ng-click="show = !show">>
+	  	{{state.name}} ({{state.abbreviation}})
+	  	<div class="state-hidden"  ng-show="show">
+	  		<span class="state-item"><label  class="state-label">Capital City:</label> {{state.capital}}</span>
+	  		<span class="state-item"><label  class="state-label">Most Populous City:</label>  {{state['most-populous-city']}}</span>
+	  		<span class="state-item"><label  class="state-label">Population:</label>  {{state.population}} people</span>
+	  		<span class="state-item"><label  class="state-label">Square Miles:</label>  {{state['square-miles']}} miles^2</span>
+	  		<span class="state-item"><label  class="state-label">TimeZone:</label>  {{state['time-zone-1']}}</span>
+	  		<span class="state-item"><label  class="state-label">DST:</label>  {{state['dst']}}</span>
+	  	</a>
+	  </div>
+</div>

@@ -1,0 +1,22 @@
+$breakpoints: (
+  xl: ( min: 1600px ),
+  lg: ( min:961px, max:1380px ),
+  md: ( min: 621px, max:960px ),
+  sm: ( max:620px )
+);
+
+$z-layers:(
+  abyss: -1,
+  base: 0,
+  overlay: 100,
+  modal: 200
+);
+
+$perspective-depth: 1000px;
+
+$max-width: 1440px;
+
+$white: #FFF;
+$black: #161616;
+
+$image-path: '../images/';

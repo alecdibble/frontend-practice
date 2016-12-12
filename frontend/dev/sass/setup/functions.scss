@@ -1,0 +1,11 @@
+@function z-layer($_layer, $_increment: 0){
+  @if (map-has-key($z-layers, $_layer)){
+    @return map-get($z-layers, $_layer) + round($_increment);
+  } @else {
+    @error "Z-LAYER: #{$_layer} not defined. Currently defined Z-layers: #{map-keys($z-layers)}.";
+  }
+}
+
+@function local-image($path){
+  @return #{$image-path}#{$path};
+}

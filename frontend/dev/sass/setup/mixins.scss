@@ -1,0 +1,121 @@
+@mixin responsive($_size, $range: false) {
+  @if(type-of($_size) == number){
+    @media (max-width: $_size) { @content; }
+  }
+  @else {
+    @if(map-has-key($breakpoints, $_size)){
+      $_bp: map-get($breakpoints, $_size);
+      @if(type-of($_bp) == number){
+        @media (max-width: $_bp) { @content; }
+      }
+      @else if(map-has-key($_bp, min) and map-has-key($_bp, max) and $range == true){
+        @media (min-width: map-get($_bp, min)) and (max-width: map-get($_bp, max)) { @content; }
+      }
+      @else if(map-has-key($_bp, max)){
+        @media (max-width: map-get($_bp, max)) { @content; }
+      }
+      @else if(map-has-key($_bp, min)){
+        @media (min-width: map-get($_bp, min)) { @content; }
+      } @else {
+        @error "RESPONSIVE: $breakpoint value for '#{$_size}' is of an unsupported type."
+      }
+    }
+    @else {
+      @error "RESPONSIVE: '#{$_size}' is not defined within $breakpoints. Currently defined breakpoints: '#{map-keys($breakpoints)}'";
+    }
+  }
+}
+
+@mixin nth-range($_start, $_end){
+  @for $_i from $_start to $_end{
+    &:nth-child(#{$_i}){
+      @content;
+    }
+  }
+}
+
+@mixin transition-sequence($_timing-gap, $_elCount, $_initial-delay: 0){
+  @for $_i from 1 to $_elCount{
+    &:nth-child(#{$_i}){
+      @include transition-delay(0ms + $_initial-delay + ($_timing-gap * $_i));
+    }
+  }
+}
+@mixin animation-sequence($_timing-gap, $_elCount, $_initial-delay: 0){
+  @for $_i from 1 to $_elCount{
+    &:nth-child(#{$_i}){
+      @include animation-delay(0ms + $_initial-delay + ($_timing-gap * $_i));
+    }
+  }
+}
+
+
+@mixin fill-parent() {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+
+@mixin ghost-center( $_child: '.ghost-center__child' ) {
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+  }
+  #{$_child} {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+@mixin text-ellipsis($_nowrap: true) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @if ( $_nowrap ) {
+    white-space: nowrap;
+  }
+}
+
+@mixin font-smooth($_smooth: true) {
+  @if $_smooth {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: none;
+  }
+}
+
+@mixin setup-perspective($depth: $perspective-depth, $origin: center center){
+  @include perspective($depth);
+  @include perspective-origin($origin);
+  @include transform-style(preserve-3d);
+}
+
+@mixin anchor-fill($z-index: z-layer(base, +1)){
+  @include fill-parent();
+  z-index: $z-index;
+}
+
+@mixin global-sprite-settings($multiplier: 1) {
+  background-image: url(map-get($sprite-settings, imageurl));
+  background-size: (map-get($sprite-settings, width) * $multiplier) (map-get($sprite-settings, height) * $multiplier);
+}
+
+@mixin sprite($name, $multiplier: 1){
+  @include global-sprite-settings($multiplier);
+  @if (map-has-key($sprites, $name)) {
+    $sprite: map-get($sprites, $name);
+    $x: nth($sprite, 1) * $multiplier;
+    $y: nth($sprite, 2) * $multiplier;
+    background-position: $x $y;
+  } @else {
+    @warn "Sprite #{$name} doesn't exist."
+  }
+}
