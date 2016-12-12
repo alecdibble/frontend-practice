@@ -16,6 +16,7 @@ I created a top nav bar for three main application functions: state listing, gue
 The design is responsive and should not break across most screen widths including iPhone 5.
 
 What I would like to improve if I spent more time on this:
+
 1. Add indication in Nav of current route/feature
 2. Add hover effects and animations using transitions
 3. Make login modal instead of a seperate route
