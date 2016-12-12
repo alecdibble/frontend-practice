@@ -23,6 +23,7 @@ What I would like to improve if I spent more time on this:
 - Use columns or grids to display more states and guest book entries on the screen.
 - On states listing, add ability to sort or filter based on available fields.
 - Add icons
+- Add validation to phone number field
 
 
 # What steps did you take to make your application user friendly?
