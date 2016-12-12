@@ -16,14 +16,14 @@ I created a top nav bar for three main application functions: state listing, gue
 The design is responsive and should not break across most screen widths including iPhone 5.
 
 What I would like to improve if I spent more time on this:
-- Add indication in Nav of current route/feature
-- Add hover effects and animations using transitions
-- Make login modal instead of a seperate route
-- Add mobile hamburger menu
-- Use columns or grids to display more states and guest book entries on the screen.
-- On states listing, add ability to sort or filter based on available fields.
-- Add icons
-- Add validation to phone number field
+1. Add indication in Nav of current route/feature
+2. Add hover effects and animations using transitions
+3. Make login modal instead of a seperate route
+4. Add mobile hamburger menu
+5. Use columns or grids to display more states and guest book entries on the screen.
+6. On states listing, add ability to sort or filter based on available fields.
+7. Add icons
+8. Add validation to phone number field
 
 
 # What steps did you take to make your application user friendly?
