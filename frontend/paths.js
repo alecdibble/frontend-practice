@@ -10,12 +10,12 @@ var _sources = {
 }
 
 var _dests = {
-  jsPath: 'dist/js/',
-  cssPath: 'dist/css/',
-  imgPath: 'dist/images/',
-  markupPath: 'dist/',
-  fontPath: 'dist/fonts/',
-  depsPath: 'dist/js/deps/'
+  jsPath: '../public/js/',
+  cssPath: '../public/css/',
+  imgPath: '../public/images/',
+  markupPath: '../public/',
+  fontPath: '../public/fonts/',
+  depsPath: '../public/js/deps/'
 }
 
 module.exports = {
