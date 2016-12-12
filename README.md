@@ -4,11 +4,13 @@ It can be accessed at the root url /.
 
 # What libraries did you use to write your application?
 
-I used Angular 1.5, including ngCookies and ngRoute, as well as lodash and jQuery.
+I used Angular 1.x, as well as lodash and jQuery.
 
 # What influenced the design of your user interface?
 
-Because all of the API routes are public except for login and /write, I decided to not require login for the state listing page or guest book. Logging in causes the user to be redirected back to the page they were previousely and allows them to submit guest book entries.
+Because all of the API routes are public except for /login and /write, I decided to not require login for the state listing page or guest book. Logging in causes the user to be redirected back to the page they were previousely and allows them to submit guest book entries.
+If those pages are meant to private, all API endpoints should have an authorization scheme.
+
 I created a top nav bar for three main application functions: state listing, guest books, and authorization. Logging out will not change the current page but will hide the guest book form if it is showing.
 
 The design is responsive and should not break across most screen widths including iPhone 5.
@@ -16,6 +18,12 @@ The design is responsive and should not break across most screen widths includin
 What I would like to improve if I spent more time on this:
 - Add indication in Nav of current route/feature
 - Add hover effects and animations using transitions
+- Make login modal instead of a seperate route
+- Add mobile hamburger menu
+- Use columns or grids to display more states and guest book entries on the screen.
+- On states listing, add ability to sort or filter based on available fields.
+- Add icons
+
 
 # What steps did you take to make your application user friendly?
 
