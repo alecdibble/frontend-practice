@@ -35,7 +35,13 @@ angular.module('appLogic').controller('AppCtrl', ['$scope', '$route', '$log', '$
         AuthService.login($scope.username, $scope.password)
         .then(function(result) {
           if(result) {
-            $location.path(AuthService.lastLocation);
+            var lastLocation = AuthService.lastLocation;
+            if(lastLocation.includes('/login'))  {
+              $location.path('/');
+            }
+            else {
+              $location.path(lastLocation);
+            }
           }
           else {
             $scope.error = "Your username or password is incorrect.";

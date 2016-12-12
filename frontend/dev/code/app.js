@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('appLogic', ['ngRoute', 'ngCookies'])
+angular.module('appLogic', ['ngRoute', 'ngCookies', 'ngSanitize'])
   .constant('example', { })
   .run(['$log', function($log){}]);
 

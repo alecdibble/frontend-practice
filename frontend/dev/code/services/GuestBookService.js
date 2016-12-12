@@ -1,5 +1,5 @@
 'use strict';
-angular.module('appLogic').service('GuestBookService', ['$log', '$cookies', 'BaseDataService', '$q', function($log, $cookies, BaseDataService, $q){
+angular.module('appLogic').service('GuestBookService', ['$log', '$cookies', '$sanitize', 'BaseDataService', '$q', function($log, $cookies, $sanitize, BaseDataService, $q){
   return {
     retrievedStates: [],
     getEntries: function() {
@@ -9,7 +9,7 @@ angular.module('appLogic').service('GuestBookService', ['$log', '$cookies', 'Bas
       });
     },
     postEntry: function(phone, message) {
-      return BaseDataService.post('/write', {phone: phone, message: message});
+      return BaseDataService.post('/write', {phone: $sanitize(phone), message: $sanitize(message)});
     }
   };
 }]);

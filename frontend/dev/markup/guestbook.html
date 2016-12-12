@@ -26,9 +26,9 @@
 	<div class="">
 		<h1>Guest Book</h1>
 		<div ng-repeat="entry in entries" class="guestbook-entries">
-		  <h2>Name: <span ng-bind="entry.user"></span></h2>
-		  <h3>Phone Number: <span ng-bind="entry.phone"></span></h3>
-		  <h3>Message: </h3><p ng-bind="entry.message"></p>
+		  <h2>Name: <span ng-bind-html="entry.user"></span></h2>
+		  <h3>Phone Number: <span ng-bind-html="entry.phone"></span></h3>
+		  <h3>Message: </h3><p ng-bind-html="entry.message"></p>
 		</div>
 	</div>
 </div>

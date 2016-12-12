@@ -1,4 +1,4 @@
-<div ng-controller="StatesCtrl">
+<div ng-controller="StatesCtrl" class="states-container">
 	  <div ng-repeat="state in states" class="state-box" ng-click="show = !show">>
 	  	{{state.name}} ({{state.abbreviation}})
 	  	<div class="state-hidden"  ng-show="show">

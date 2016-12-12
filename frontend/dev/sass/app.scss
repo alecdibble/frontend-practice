@@ -27,6 +27,7 @@ body {
 .nav-wrapper {
 	width: 40%;
   margin: auto;
+  @media screen and (max-width: 1000px) { width: 100%; }
 }
 
 %nav-links {
@@ -41,6 +42,7 @@ body {
   font-family: 'Lato', sans-serif;
   width: 33%;
   text-align: center;
+  @media screen and (max-width: 350px) { font-size: 13px; }
 }
 
 .nav-link-states {
@@ -51,7 +53,10 @@ body {
 }
 .nav-link-login {
 	@extend %nav-links;
+  @media screen and (max-width: 440px) { font-size: 13px; }
 }
+
+
 
 
 //Forms
@@ -74,6 +79,7 @@ body {
     border: none;
     font-weight: bold;
     font-size: 20px;
+    @media screen and (max-width: 900px) { width: 90%;height: 50px; font-size: 20px; }
 }
 
 .form-control {
@@ -81,6 +87,8 @@ body {
     border-radius: 3px;
     box-shadow: none;
     border: 1px solid #b2ebf2;
+    padding-left: 10px;
+    @media screen and (max-width: 900px) { width: 90%;height: 50px; font-size: 20px; }
 }
 
 .help-block {
@@ -112,6 +120,7 @@ body {
     margin: auto;
     margin-bottom: 40px;
     padding: 20px;
+    max-width: 100%;
 }
 
 .guestbook-auth  {
@@ -132,9 +141,15 @@ body {
 
 //states
 
+.states-container {
+  margin: 40px;
+  @media screen and (max-width: 440px) { margin: 20px; }
+}
+
 .state-hidden {
-	    padding-left: 20px;
-	        padding-top: 20px;
+	padding-left: 20px;
+	padding-top: 20px;
+  @media screen and (max-width: 440px) { padding-left: 0px; }
 }
 
 .state-box {
@@ -145,6 +160,7 @@ body {
     margin-bottom: 5px;
     padding: 10px;
     font-size: 20px;
+    max-width: 100%;
 }
 
 .state-item {
